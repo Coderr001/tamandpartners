@@ -166,9 +166,11 @@ const paketRetainer = [
    LAWYERS
 ========================================================= */
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const lawyers = [
   {
-    foto: '/Lawyers/dani.jpeg',
+    foto: `${BASE_URL}Lawyers/dani.jpeg`,
     initials: 'DM',
     nama: 'DANI MULYA TASDIK, S.H., M.M., M.H., CHRP.',
     jabatan: 'MANAGING PARTNER',
@@ -192,7 +194,7 @@ const lawyers = [
   },
 
   {
-    foto: '/Lawyers/ahmad purmadi.jpeg',
+    foto: `${BASE_URL}Lawyers/ahmad purmadi.jpeg`,
     initials: 'AP',
     nama: 'AHMAD PURMADI, S.H., CCLC.',
     jabatan: 'PARTNER',
@@ -213,7 +215,7 @@ const lawyers = [
   },
 
   {
-    foto: '/Lawyers/erland.jpeg',
+    foto: `${BASE_URL}Lawyers/erland.jpeg`,
     initials: 'EN',
     nama: 'ERLANDA NOVRIADI, S.H., CPLA.',
     jabatan: 'PARTNER',
@@ -234,7 +236,7 @@ const lawyers = [
   },
 
   {
-    foto: '/Lawyers/ari wibowo.jpeg',
+    foto: `${BASE_URL}Lawyers/ari wibowo.jpeg`,
     initials: 'GA',
     nama: 'GUN CATUR ARI WIBOWO, S.H.',
     jabatan: 'PARTNER',
@@ -253,7 +255,7 @@ const lawyers = [
   },
 
   {
-    foto: '/Lawyers/Rahmatulah.jpeg',
+    foto: `${BASE_URL}Lawyers/Rahmatulah.jpeg`,
     initials: 'RH',
     nama: 'ROHMATTULLOH, S.H.',
     jabatan: 'PARTNER',
@@ -272,9 +274,9 @@ const lawyers = [
   },
 
   {
-  foto: '/Lawyers/titis.jpeg',
-  initials: 'TM',
-  photoClass: 'titisPhoto',
+    foto: `${BASE_URL}Lawyers/titis.jpeg`,
+    initials: 'TM',
+    photoClass: 'titisPhoto',
     nama: 'TITIS MUBAROKH, S.H.',
     jabatan: 'PARTNER',
     role: 'ADVOCATE',
@@ -292,7 +294,7 @@ const lawyers = [
   },
 
   {
-    foto: '/Lawyers/jejen.jpeg',
+    foto: `${BASE_URL}Lawyers/jejen.jpeg`,
     initials: 'JM',
     nama: 'JEJEN MUSTOPA, S.H.',
     jabatan: 'PARTNER',
@@ -309,7 +311,7 @@ const lawyers = [
     organisasi: 'PERADI PROFESIONAL',
     sertifikat: []
   }
-]
+];
 
 
 function App() {
@@ -325,7 +327,7 @@ function App() {
         <a className="logo" href="#beranda">
 
           <img
-            src="/logo-tam-partners-transparent.png"
+            src="/.logo-tam-partners-transparent.png"
             alt="TAM & PARTNERS"
             className="logoImage"
           />
