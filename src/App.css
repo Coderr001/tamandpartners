@@ -1,0 +1,2831 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    background: #ffffff;
+    color: #08152c;
+}
+
+#root {
+    width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    height: 88px;
+
+    padding: 0 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #ffffff;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+}
+
+.logoMain {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 20px;
+
+    letter-spacing: 0.5px;
+}
+
+.logoSub {
+    margin-top: 3px;
+
+    color: #9bb2cc;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.navLinks {
+    display: flex;
+
+    align-items: center;
+
+    gap: 36px;
+}
+
+.navLinks a {
+    position: relative;
+
+    color: #c4d0df;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.navLinks a:hover,
+.navLinks a.active {
+    color: #ffffff;
+}
+
+.navLinks a.active::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -12px;
+
+    height: 2px;
+
+    background: #ffffff;
+}
+
+.navButton {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 13px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.navButton:hover {
+    background: #ffffff;
+
+    color: #07162f;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 780px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 150px 8% 150px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 72% 40%,
+            rgba(23, 77, 175, 0.55),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 35% 100%,
+            rgba(10, 55, 135, 0.3),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #02091e 0%,
+            #051c4e 45%,
+            #062e79 100%
+        );
+}
+
+
+/* =========================================================
+   BLUE / GOLD TOP CURVE
+========================================================= */
+
+.heroCurveTop {
+    position: absolute;
+
+    width: 800px;
+    height: 270px;
+
+    right: -150px;
+    top: -170px;
+
+    border-radius: 50%;
+
+    border-top: 5px solid #0756cf;
+
+    transform: rotate(14deg);
+
+    opacity: 0.9;
+}
+
+.heroCurveTop::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 15px;
+
+    border-radius: 50%;
+
+    border-top: 3px solid #154eaf;
+}
+
+.heroCurveTop::after {
+    content: '';
+
+    position: absolute;
+
+    inset: 30px;
+
+    border-radius: 50%;
+
+    border-top: 2px solid #d5ae60;
+}
+
+
+/* =========================================================
+   BLUE / GOLD BOTTOM CURVE
+========================================================= */
+
+.heroCurveBottom {
+    position: absolute;
+
+    width: 850px;
+    height: 220px;
+
+    left: -180px;
+    bottom: -145px;
+
+    border-radius: 50%;
+
+    border-top: 9px solid #0757d4;
+
+    border-bottom: 2px solid #d3aa59;
+
+    transform: rotate(7deg);
+
+    box-shadow:
+        0 -12px 35px rgba(0, 81, 255, 0.3);
+}
+
+.heroCurveBottom::after {
+    content: '';
+
+    position: absolute;
+
+    inset: 14px;
+
+    border-radius: 50%;
+
+    border-top: 2px solid #174eae;
+}
+
+
+/* =========================================================
+   DOT PATTERN
+========================================================= */
+
+.heroDots {
+    position: absolute;
+
+    right: -50px;
+    bottom: -50px;
+
+    width: 520px;
+    height: 520px;
+
+    background-image:
+        radial-gradient(
+            rgba(40, 112, 224, 0.6) 1.5px,
+            transparent 1.5px
+        );
+
+    background-size: 14px 14px;
+
+    mask-image:
+        radial-gradient(
+            circle,
+            black 0%,
+            transparent 70%
+        );
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   LEAF DECORATION
+========================================================= */
+
+.heroLeaves span {
+    position: absolute;
+
+    width: 115px;
+    height: 32px;
+
+    border-radius: 100% 0;
+
+    border: 1px solid rgba(38, 102, 189, 0.25);
+
+    opacity: 0.5;
+}
+
+.heroLeaves span:nth-child(1) {
+    top: 65px;
+    left: 35px;
+
+    transform: rotate(-25deg);
+}
+
+.heroLeaves span:nth-child(2) {
+    top: 105px;
+    left: 105px;
+
+    transform: rotate(25deg);
+}
+
+.heroLeaves span:nth-child(3) {
+    top: 155px;
+    left: 175px;
+
+    transform: rotate(-20deg);
+}
+
+.heroLeaves span:nth-child(4) {
+    bottom: 100px;
+    left: 190px;
+
+    transform: rotate(20deg);
+}
+
+
+/* =========================================================
+   JUSTICE WATERMARK
+========================================================= */
+
+.justiceWatermark {
+    position: absolute;
+
+    right: 9%;
+    top: 23%;
+
+    z-index: 1;
+
+    color: rgba(0, 0, 0, 0.16);
+
+    font-family: serif;
+
+    font-size: 330px;
+
+    transform: rotate(-5deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.heroContent {
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 790px;
+}
+
+.label {
+    margin: 0 0 25px;
+
+    color: #9eb7d5;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 em {
+    color: #a4c0e3;
+
+    font-style: italic;
+}
+
+.heroText {
+    max-width: 580px;
+
+    margin: 30px 0 0;
+
+    color: #c3d0df;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.heroButtons {
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 16px 24px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.primaryButton {
+    background: #ffffff;
+
+    color: #07162f;
+}
+
+.primaryButton:hover {
+    background: #dce7f4;
+}
+
+.textButton {
+    padding-bottom: 7px;
+
+    border-bottom: 1px solid #8fa9c6;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    text-decoration: none;
+}
+
+.textButton span {
+    margin-left: 10px;
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.heroStats {
+    position: absolute;
+
+    z-index: 15;
+
+    right: 8%;
+    bottom: 55px;
+
+    display: flex;
+}
+
+.stat {
+    min-width: 170px;
+
+    padding: 0 35px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.stat:first-child {
+    border-left: none;
+}
+
+.stat strong {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 38px;
+
+    font-weight: 500;
+}
+
+.stat span {
+    color: #a7bad0;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section {
+    padding: 120px 8%;
+}
+
+.sectionLabel {
+    margin: 0 0 25px;
+
+    color: #557aa3;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.section h2 {
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(42px, 5vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+}
+
+.section h2 em {
+    color: #426a96;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: #ffffff;
+}
+
+.aboutGrid {
+    display: grid;
+
+    grid-template-columns: 1fr 0.9fr 1fr;
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+.aboutText {
+    color: #69798a;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.aboutText p {
+    margin: 0 0 20px;
+}
+
+.aboutLine {
+    width: 70px;
+
+    height: 1px;
+
+    margin: 28px 0 15px;
+
+    background: #c5a15c;
+}
+
+.aboutQuote {
+    color: #294f78;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   OFFICE IMAGE
+========================================================= */
+
+.officeImage {
+    height: 350px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17283a,
+            #030913
+        );
+}
+
+.officeImage::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.officeDecoration {
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    right: -50px;
+    top: -50px;
+
+    border-radius: 50%;
+
+    border: 2px solid #c6a05a;
+}
+
+.officeOverlay {
+    position: absolute;
+
+    left: 35px;
+    bottom: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.officeOverlay strong {
+    color: #ffffff;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 23px;
+}
+
+.officeOverlay span {
+    margin-top: 5px;
+
+    color: #9db2c9;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(21, 76, 171, 0.45),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #04132e,
+            #082d70
+        );
+}
+
+.services .sectionLabel {
+    color: #89a9ce;
+}
+
+.services h2 {
+    color: #ffffff;
+}
+
+.services h2 em {
+    color: #a0bee1;
+}
+
+.sectionHeader > p:last-child {
+    max-width: 550px;
+
+    margin-top: 22px;
+
+    color: #92a8c0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.serviceGrid {
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.serviceCard {
+    min-height: 150px;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr 30px;
+
+    gap: 20px;
+
+    align-items: start;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    transition:
+        background 0.25s ease,
+        padding 0.25s ease;
+}
+
+.serviceCard:nth-child(odd) {
+    padding-left: 0;
+}
+
+.serviceCard:nth-child(even) {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.serviceCard:hover {
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.serviceNumber {
+    color: #7698bd;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 17px;
+}
+
+.serviceContent h3 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 21px;
+
+    font-weight: 500;
+}
+
+.serviceContent p {
+    max-width: 400px;
+
+    margin: 0;
+
+    color: #91a6bc;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.serviceArrow {
+    color: #91afd0;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   CORPORATE RETAINER
+   LUXURY PACKAGE SECTION
+========================================================= */
+
+.retainerSection {
+    position: relative;
+
+    margin-top: 115px;
+
+    padding-top: 90px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+
+/* =========================================================
+   RETAINER HEADER
+========================================================= */
+
+.retainerHeader {
+    max-width: 760px;
+
+    margin-bottom: 58px;
+}
+
+.retainerHeadingTop {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 17px;
+}
+
+.retainerHeadingTop .sectionLabel {
+    margin: 0;
+
+    color: #9bb7d8;
+}
+
+.retainerGoldLine {
+    width: 105px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #caa15b,
+            transparent
+        );
+}
+
+.retainerHeader h3 {
+    margin: 0 0 20px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    line-height: 1.03;
+
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+
+    color: #ffffff;
+}
+
+.retainerHeader h3 em {
+    color: #d3aa5c;
+
+    font-style: italic;
+}
+
+.retainerHeader > p:last-child {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #91a8c2;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   RETAINER GRID
+========================================================= */
+
+.retainerGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   RETAINER CARD
+========================================================= */
+
+.retainerCard {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 650px;
+
+    padding: 32px 29px 27px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8f7f3 100%
+        );
+
+    border:
+        1px solid rgba(210, 177, 106, 0.28);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Gold Top Line */
+
+.retainerCard::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c49a4b 25%,
+            #e3bf74 50%,
+            #c49a4b 75%,
+            transparent
+        );
+}
+
+
+/* Decorative Circle */
+
+.retainerCard::after {
+    content: '';
+
+    position: absolute;
+
+    right: -90px;
+    bottom: -90px;
+
+    width: 200px;
+    height: 200px;
+
+    border:
+        1px solid rgba(194, 154, 75, 0.14);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.retainerCard:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(202, 161, 91, 0.65);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   PLATINUM CARD
+========================================================= */
+
+.retainerPlatinum {
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(50, 91, 148, 0.45),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(15, 61, 126, 0.3),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #102c52 0%,
+            #061a37 100%
+        );
+
+    border:
+        1px solid rgba(210, 166, 78, 0.85);
+
+    box-shadow:
+        0 28px 70px rgba(0, 7, 22, 0.38);
+}
+
+
+.retainerPlatinum:hover {
+    transform: translateY(-11px);
+
+    border-color: #e1ba6a;
+
+    box-shadow:
+        0 35px 80px rgba(0, 7, 22, 0.5);
+}
+
+
+/* =========================================================
+   RETAINER TOP
+========================================================= */
+
+.retainerTop {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 35px;
+
+    margin-bottom: 32px;
+}
+
+
+.retainerIdentity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.retainerNumber {
+    color: #c49a4b;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 13px;
+}
+
+
+.retainerSmall {
+    color: #7d899b;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.retainerPlatinum .retainerSmall {
+    color: rgba(255, 255, 255, 0.52);
+}
+
+
+/* =========================================================
+   FEATURED BADGE
+========================================================= */
+
+.retainerFeatured {
+    width: 70px;
+    height: 63px;
+
+    margin-top: -32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e3bf72,
+            #a97828
+        );
+
+    color: #ffffff;
+
+    font-size: 7px;
+
+    letter-spacing: 1.4px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.2);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 82%,
+            50% 100%,
+            0 82%
+        );
+}
+
+
+.retainerFeatured span {
+    font-size: 17px;
+
+    line-height: 1;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RETAINER NAME
+========================================================= */
+
+.retainerName {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 16px;
+}
+
+
+.retainerName h3 {
+    margin: 0;
+
+    color: #102749;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 39px;
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+}
+
+
+.retainerPlatinum .retainerName h3 {
+    color: #ffffff;
+}
+
+
+.retainerTitleLine {
+    display: block;
+
+    width: 78px;
+    height: 2px;
+
+    margin-top: 13px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c59a4b,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   RETAINER DESCRIPTION
+========================================================= */
+
+.retainerDescription {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 70px;
+
+    margin: 0;
+
+    color: #697587;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+
+.retainerPlatinum .retainerDescription {
+    color:
+        rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   RETAINER DIVIDER
+========================================================= */
+
+.retainerDivider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 24px 0 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(194, 154, 75, 0.6),
+            rgba(16, 39, 73, 0.08)
+        );
+}
+
+
+.retainerPlatinum .retainerDivider {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(212, 173, 91, 0.8),
+            rgba(255, 255, 255, 0.08)
+        );
+}
+
+
+/* =========================================================
+   PACKAGE INCLUDES
+========================================================= */
+
+.retainerIncludes {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: #bd9141;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   RETAINER LIST
+========================================================= */
+
+.retainerList {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.retainerList li {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #5e6a7b;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+.retainerPlatinum .retainerList li {
+    color:
+        rgba(255, 255, 255, 0.73);
+}
+
+
+/* =========================================================
+   CHECKMARK
+========================================================= */
+
+.retainerCheck {
+    flex-shrink: 0;
+
+    width: 18px;
+    height: 18px;
+
+    margin-top: 1px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(194, 154, 75, 0.14);
+
+    color: #bf9549;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.retainerPlatinum .retainerCheck {
+    background:
+        rgba(194, 154, 75, 0.18);
+
+    color: #e0b963;
+}
+
+
+/* =========================================================
+   RETAINER BUTTON
+========================================================= */
+
+.retainerButton {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: auto;
+
+    padding: 15px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border:
+        1px solid rgba(194, 154, 75, 0.72);
+
+    color: #102749;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.retainerButton strong {
+    color: #bf9549;
+
+    font-size: 19px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.retainerButton:hover {
+    background: #c19a4f;
+
+    border-color: #c19a4f;
+
+    color: #ffffff;
+}
+
+
+.retainerButton:hover strong {
+    color: #ffffff;
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   PLATINUM BUTTON
+========================================================= */
+
+.retainerPlatinum .retainerButton {
+    background:
+        linear-gradient(
+            135deg,
+            #e5c27b,
+            #b98732
+        );
+
+    border-color:
+        rgba(229, 194, 123, 0.95);
+
+    color: #102749;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+
+.retainerPlatinum .retainerButton strong {
+    color: #102749;
+}
+
+
+.retainerPlatinum .retainerButton:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #f0d18e,
+            #c99a43
+        );
+}
+
+
+/* =========================================================
+   RETAINER RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .retainerGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .retainerCard {
+        min-height: auto;
+    }
+
+    .retainerPlatinum {
+        transform: none;
+    }
+
+    .retainerPlatinum:hover {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navLinks {
+        gap: 20px;
+    }
+
+    .navButton {
+        display: none;
+    }
+
+    .aboutGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .officeImage {
+        grid-column: span 2;
+    }
+
+    .lawyerGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .heroStats {
+        right: 5%;
+    }
+
+    .stat {
+        min-width: 130px;
+
+        padding: 0 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        height: auto;
+
+        padding: 20px 24px;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    .logoMain {
+        font-size: 17px;
+    }
+
+    .navLinks {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 8px;
+    }
+
+    .navLinks a {
+        font-size: 10px;
+    }
+
+    .navLinks a:nth-child(4) {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 850px;
+
+        padding: 150px 24px 180px;
+
+        justify-content: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+
+        letter-spacing: -1px;
+    }
+
+    .heroText {
+        font-size: 14px;
+    }
+
+    .heroButtons {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 22px;
+    }
+
+
+    /* STATS */
+
+    .heroStats {
+        left: 24px;
+        right: 24px;
+
+        bottom: 45px;
+
+        justify-content: space-between;
+    }
+
+    .stat {
+        min-width: auto;
+
+        padding: 0 10px;
+    }
+
+    .stat strong {
+        font-size: 27px;
+    }
+
+    .stat span {
+        font-size: 6px;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    /* SECTIONS */
+
+    .section {
+        padding: 85px 24px;
+    }
+
+    .section h2 {
+        font-size: 42px;
+    }
+
+
+    /* ABOUT */
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .officeImage {
+        grid-column: auto;
+
+        height: 300px;
+    }
+
+
+    /* SERVICES */
+
+    .serviceGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .serviceCard,
+    .serviceCard:nth-child(even),
+    .serviceCard:nth-child(odd) {
+        padding: 25px 0;
+
+        border-left: none;
+    }
+
+
+    /* LAWYERS */
+
+    .lawyerGrid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .lawyerPhoto {
+        height: 390px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        padding: 90px 24px;
+    }
+
+    .contact h2 {
+        font-size: 43px;
+    }
+
+    .contactDetails {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 25px 24px;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+
+    /* RETAINER */
+
+    .retainerSection {
+        margin-top: 80px;
+
+        padding-top: 65px;
+    }
+
+    .retainerHeader {
+        margin-bottom: 40px;
+    }
+
+    .retainerHeader h3 {
+        font-size: 40px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .retainerHeadingTop {
+        gap: 12px;
+    }
+
+    .retainerGoldLine {
+        width: 65px;
+    }
+
+    .retainerCard {
+        padding: 28px 24px 25px;
+    }
+
+    .retainerName h3 {
+        font-size: 34px;
+    }
+
+    .retainerFeatured {
+        width: 65px;
+        height: 59px;
+    }
+
+}
+
+/* =========================================================
+   LAWYERS
+========================================================= */
+
+.lawyers {
+    background: #ffffff;
+}
+
+.lawyers .sectionHeader {
+    margin-bottom: 65px;
+}
+
+.lawyers .sectionLabel {
+    color: #557aa3;
+}
+
+.lawyers .sectionHeader h2 {
+    color: #08152c;
+}
+
+.lawyers .sectionHeader h2 em {
+    color: #426a96;
+}
+
+.lawyers .sectionHeader > p:last-child {
+    max-width: 550px;
+    margin-top: 22px;
+
+    color: #7b8795;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LAWYER GRID
+========================================================= */
+
+.lawyerGrid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   LAWYER CARD
+========================================================= */
+
+.lawyerCard {
+    overflow: hidden;
+
+    background: #f7f7f5;
+
+    border: 1px solid #e3e5e7;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.lawyerCard:hover {
+    transform: translateY(-7px);
+
+    border-color: #c5a15c;
+
+    box-shadow:
+        0 20px 45px rgba(5, 20, 45, 0.12);
+}
+
+
+/* =========================================================
+   LAWYER PHOTO
+========================================================= */
+
+.lawyerPhoto {
+    height: 390px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(37, 91, 160, 0.55),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #102d54,
+            #06152d
+        );
+}
+
+
+/* Gold frame */
+
+.lawyerPhoto::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(203, 166, 91, 0.45);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   LAWYER INITIAL
+========================================================= */
+
+.lawyerInitial {
+    position: relative;
+
+    z-index: 2;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 95px;
+
+    font-weight: 500;
+
+    letter-spacing: -4px;
+}
+
+
+/* =========================================================
+   PHOTO PATTERN
+========================================================= */
+
+.lawyerPhotoPattern {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.35;
+
+    background-image:
+        radial-gradient(
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px
+        );
+
+    background-size: 14px 14px;
+
+    mask-image:
+        linear-gradient(
+            135deg,
+            black,
+            transparent 70%
+        );
+}
+
+
+/* Decorative gold circle */
+
+.lawyerPhotoPattern::after {
+    content: '';
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(205, 166, 88, 0.45);
+}
+
+
+/* =========================================================
+   LAWYER ROLE
+========================================================= */
+
+.lawyerRole {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 30px;
+    bottom: 25px;
+
+    padding: 9px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    background: rgba(3, 16, 36, 0.45);
+
+    backdrop-filter: blur(5px);
+
+    color: #d5b56e;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   LAWYER INFO
+========================================================= */
+
+.lawyerInfo {
+    padding: 30px;
+}
+
+.lawyerPosition {
+    margin: 0 0 10px;
+
+    color: #b28a42;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.lawyerInfo h3 {
+    margin: 0;
+
+    color: #0b1d39;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+.lawyerTitle {
+    margin: 7px 0 18px;
+
+    color: #718096;
+
+    font-size: 11px;
+}
+
+.lawyerDescription {
+    min-height: 65px;
+
+    margin: 0;
+
+    color: #69798a;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LAWYER LINK
+========================================================= */
+
+.lawyerLink {
+    margin-top: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom: 7px;
+
+    border-bottom: 1px solid #c5a15c;
+
+    color: #102749;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+}
+
+.lawyerLink span {
+    color: #bd9141;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.lawyerLink:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 120px 8%;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(26, 77, 163, 0.5),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #030b20,
+            #082b69
+        );
+}
+
+
+/* Decorative curve */
+
+.contactCurve {
+    position: absolute;
+
+    width: 800px;
+    height: 350px;
+
+    right: -250px;
+    bottom: -220px;
+
+    border-radius: 50%;
+
+    border-top: 2px solid rgba(211, 170, 89, 0.65);
+
+    transform: rotate(-12deg);
+
+    opacity: 0.8;
+}
+
+.contactCurve::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 18px;
+
+    border-radius: 50%;
+
+    border-top: 2px solid rgba(26, 88, 183, 0.7);
+}
+
+
+/* =========================================================
+   CONTACT INNER
+========================================================= */
+
+.contactInner {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 1100px;
+}
+
+.contact .sectionLabel {
+    color: #91afd0;
+}
+
+.contact h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(45px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+.contact h2 em {
+    color: #d3aa5c;
+
+    font-style: italic;
+}
+
+.contactDescription {
+    max-width: 550px;
+
+    margin: 25px 0 45px;
+
+    color: #aabbd0;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contactDetails {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr
+        1.5fr;
+
+    gap: 40px;
+
+    margin-bottom: 45px;
+}
+
+.contactDetails > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    padding-left: 18px;
+
+    border-left: 1px solid rgba(202, 161, 91, 0.6);
+}
+
+.contactDetails span {
+    color: #91afd0;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.contactDetails strong {
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
+
+.contact .primaryButton {
+    background: #ffffff;
+
+    color: #07162f;
+}
+
+.contact .primaryButton:hover {
+    background: #d9e3ef;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    min-height: 100px;
+
+    padding: 30px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #02091a;
+
+    color: #ffffff;
+}
+
+.footerBrand {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.footerBrand strong {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+.footerBrand span {
+    color: #7187a3;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+footer p {
+    margin: 0;
+
+    color: #64758c;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MOBILE FIX
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .lawyers .sectionHeader {
+        margin-bottom: 45px;
+    }
+
+    .lawyerPhoto {
+        height: 340px;
+    }
+
+    .lawyerInfo {
+        padding: 25px;
+    }
+
+    .lawyerDescription {
+        min-height: auto;
+    }
+
+    .contactDetails {
+        grid-template-columns: 1fr;
+    }
+
+    .contactDetails > div {
+        padding-left: 15px;
+    }
+
+    footer {
+        min-height: auto;
+
+        padding: 28px 24px;
+    }
+
+}
+
+.logoImage {
+    width: 155px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+/* =========================================================
+   ABOUT - COMPANY INFORMATION
+========================================================= */
+
+.companyInfo {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 85px auto 0;
+}
+
+
+/* =========================================================
+   COMPANY META
+========================================================= */
+
+.companyMeta {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+}
+
+.companyMetaItem {
+    position: relative;
+
+    padding: 25px 28px;
+
+    background: #f7f8f8;
+
+    border: 1px solid #e4e6e8;
+
+    overflow: hidden;
+}
+
+.companyMetaItem::after {
+    content: '';
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    right: -35px;
+    bottom: -35px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(191, 151, 75, 0.35);
+}
+
+.companyMetaItem span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #6685a7;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.companyMetaItem strong {
+    display: block;
+
+    color: #0b1e3b;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   COMPANY PROFILE
+========================================================= */
+
+.companyProfile {
+    position: relative;
+
+    max-width: 900px;
+
+    padding-left: 30px;
+
+    border-left: 1px solid #c9a35c;
+}
+
+.companyProfileLabel {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #b38a43;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.companyProfile p {
+    margin: 0 0 16px;
+
+    color: #66778c;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   VISION & MISSION
+========================================================= */
+
+.visionMission {
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 30px;
+
+    margin-top: 55px;
+}
+
+
+/* =========================================================
+   VISION BOX
+========================================================= */
+
+.visionBox,
+.missionBox {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 20px;
+
+    padding: 38px;
+
+    border: 1px solid #e1e4e7;
+
+    background: #fafafa;
+
+    overflow: hidden;
+}
+
+.visionBox::before,
+.missionBox::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b78b3f,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.visionNumber {
+    color: #c29b57;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.visionLabel {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #7188a3;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.visionBox h3,
+.missionBox h3 {
+    margin: 0 0 18px;
+
+    color: #0b1d39;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   VISION TEXT
+========================================================= */
+
+.visionBox p {
+    margin: 0;
+
+    color: #68788b;
+
+    font-size: 12px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   MISSION LIST
+========================================================= */
+
+.missionList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.missionList > div {
+    display: grid;
+
+    grid-template-columns: 25px 1fr;
+
+    gap: 12px;
+
+    align-items: start;
+}
+
+.missionList span {
+    padding-top: 2px;
+
+    color: #bd934c;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.missionList p {
+    margin: 0;
+
+    color: #68788b;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   ABOUT RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .companyInfo {
+        margin-top: 65px;
+    }
+
+    .visionMission {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .companyMeta {
+        grid-template-columns: 1fr;
+    }
+
+    .companyProfile {
+        padding-left: 20px;
+    }
+
+    .visionBox,
+    .missionBox {
+        grid-template-columns: 35px 1fr;
+
+        padding: 25px 22px;
+    }
+
+    .visionBox h3,
+    .missionBox h3 {
+        font-size: 25px;
+    }
+
+}
+
+.contactInstagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.contactInstagram span {
+    color: #c9a35c;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.contactInstagram:hover {
+    color: #c9a35c;
+}
+
+.contactInstagram:hover span {
+    transform: translate(3px, -3px);
+}
+/* =========================================================
+   LAWYER REAL PHOTOS
+========================================================= */
+
+.lawyerPhoto {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    background: #0b1e3b;
+}
+
+.lawyerActualPhoto {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center top;
+
+    z-index: 1;
+
+    transition: transform 0.6s ease;
+}
+
+
+/* Pattern jangan menutupi foto */
+
+.lawyerPhotoPattern {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* Role tetap di atas foto */
+
+.lawyerRole {
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    z-index: 3;
+}
+
+
+/* Hover */
+
+.lawyerCard:hover .lawyerActualPhoto {
+    transform: scale(1.04);
+}
+/* =========================================================
+   TITIS PHOTO - ADJUST FRAMING
+========================================================= */
+
+/* =========================================================
+   TITIS - MAKE PHOTO LOOK MORE DISTANT
+========================================================= */
+
+.titisPhoto {
+    background: #c90812;
+    overflow: hidden;
+}
+
+.titisPhoto .lawyerActualPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transform: scale(0.90);
+    transform-origin: center center;
+}
